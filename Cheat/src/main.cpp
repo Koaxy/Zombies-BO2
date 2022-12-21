@@ -18,11 +18,13 @@ void cons(const char* name)
 /* Functions */
 DWORD GetPlayerHealth()
 {
-	return *(DWORD*)(Entity + 0x0238);
+	return *reinterpret_cast<DWORD*>(Entity + 0x238)
+	//return *(DWORD*)(Entity + 0x0238);
 }
 void SetPlayerHealth(int Value)
 {
-	*(DWORD*)(Entity + 0x54CC) = Value;
+	*reinterrpret_cast<DWORD*>(Entity + 0x54CC) = Value;
+	//*(DWORD*)(Entity + 0x54CC) = Value;
 }
 void setMoneys(int value)
 {
